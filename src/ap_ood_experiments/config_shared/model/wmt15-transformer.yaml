@@ -1,0 +1,12 @@
+model: 
+  _target_: ap_ood_experiments.transformer.Transformer
+  vocab_size: 32100
+
+tokenizer:
+  _target_: transformers.AutoTokenizer.from_pretrained
+  pretrained_model_name_or_path: google-t5/t5-base
+
+
+model_name: ml-jku/wmt15-transformer
+input_ctx_len: 512
+output_ctx_len: 512

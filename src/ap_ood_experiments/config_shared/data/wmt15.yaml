@@ -1,0 +1,113 @@
+id:
+  train:
+    storage: wmt_wmt15/train
+    split: train
+    runtime:
+      _target_: ap_ood_experiments.dataset.wmt.WMTDataset
+      path: wmt/wmt15
+      name: fr-en
+      split: train
+      cache_dir: ${oc.env:WMT_ROOT}
+  test:
+    storage: wmt_wmt15/test
+    split: test
+    runtime:
+      _target_: ap_ood_experiments.dataset.wmt.WMTDataset
+      path: wmt/wmt15
+      name: fr-en
+      split: test
+      cache_dir: ${oc.env:WMT_ROOT}
+
+aux:
+  train:
+    storage: paracrawl_ParaCrawl/train
+    runtime:
+      _target_: ap_ood_experiments.dataset.paracrawl.ParacrawlDataset
+      src_lang: en
+      trg_lang: fr
+      file_path: ${oc.env:PARACRAWL_ROOT}/en-fr.txt
+      split: train
+  val:
+    storage: paracrawl_ParaCrawl/validation
+    runtime:
+      _target_: ap_ood_experiments.dataset.paracrawl.ParacrawlDataset
+      src_lang: en
+      trg_lang: fr
+      file_path: ${oc.env:PARACRAWL_ROOT}/en-fr.txt
+      split: validation
+
+ood:
+  - name: newsdiscussdev15
+    storage: wmt_wmt15-newsdiscussdev15/dev
+    split: dev
+    runtime:
+      _target_: ap_ood_experiments.dataset.wmt15.WMT15Dataset
+      src_lang: en
+      trg_lang: fr
+      src_path: ${oc.env:WMT_DEV_ROOT}/newsdiscussdev2015-enfr-src.en.sgm
+      trg_path: ${oc.env:WMT_DEV_ROOT}/newsdiscussdev2015-enfr-ref.fr.sgm
+      document_tag: p
+  - name: newsdiscusstest15
+    storage: wmt_wmt15-newsdiscusstest15/test
+    split: test
+    runtime:
+      _target_: ap_ood_experiments.dataset.wmt15.WMT15Dataset
+      src_lang: en
+      trg_lang: fr
+      src_path: ${oc.env:WMT_TEST_ROOT}/newsdiscusstest2015-enfr-src.en.sgm
+      trg_path: ${oc.env:WMT_TEST_ROOT}/newsdiscusstest2015-enfr-ref.fr.sgm
+      document_tag: p
+  - name: newstest14
+    storage: wmt_wmt15-newstest14/test
+    split: test
+    runtime:
+      _target_: ap_ood_experiments.dataset.wmt15.WMT15Dataset
+      src_lang: en
+      trg_lang: fr
+      src_path: ${oc.env:WMT_DEV_ROOT}/newstest2014-fren-src.en.sgm
+      trg_path: ${oc.env:WMT_DEV_ROOT}/newstest2014-fren-src.fr.sgm
+  - name: opus_law
+    storage: opus_law/train
+    split: train
+    runtime:
+      _target_: ap_ood_experiments.dataset.opus.OpusDataset
+      src_lang: en
+      trg_lang: fr
+      src_path: ${oc.env:OPUS_ROOT}/law/ELRC-EUIPO_law.en-fr.en
+      trg_path: ${oc.env:OPUS_ROOT}/law/ELRC-EUIPO_law.en-fr.fr
+  - name: opus_medical
+    storage: opus_medical/train
+    split: train
+    runtime:
+      _target_: ap_ood_experiments.dataset.opus.OpusDataset
+      src_lang: en
+      trg_lang: fr
+      src_path: ${oc.env:OPUS_ROOT}/medical/EMEA.en-fr.en
+      trg_path: ${oc.env:OPUS_ROOT}/medical/EMEA.en-fr.fr
+  - name: opus_koran
+    storage: opus_Koran/train
+    split: train
+    runtime:
+      _target_: ap_ood_experiments.dataset.opus.OpusDataset
+      src_lang: en
+      trg_lang: fr
+      src_path: ${oc.env:OPUS_ROOT}/Koran/Tanzil.en-fr.en
+      trg_path: ${oc.env:OPUS_ROOT}/Koran/Tanzil.en-fr.fr
+  - name: opus_it
+    storage: opus_IT/train
+    split: train
+    runtime:
+      _target_: ap_ood_experiments.dataset.opus.OpusDataset
+      src_lang: en
+      trg_lang: fr
+      src_path: ${oc.env:OPUS_ROOT}/it/Ubuntu.en-fr.en
+      trg_path: ${oc.env:OPUS_ROOT}/it/Ubuntu.en-fr.fr
+  - name: opus_subtitles
+    storage: opus_subtitles/train
+    split: train
+    runtime:
+      _target_: ap_ood_experiments.dataset.opus.OpusDataset
+      src_lang: en
+      trg_lang: fr
+      src_path: ${oc.env:OPUS_ROOT}/subtitles/OpenSubtitles.en-fr.en
+      trg_path: ${oc.env:OPUS_ROOT}/subtitles/OpenSubtitles.en-fr.fr

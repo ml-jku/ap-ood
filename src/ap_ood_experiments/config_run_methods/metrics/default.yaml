@@ -1,0 +1,8 @@
+auroc:
+  _target_: ap_ood_experiments.ood.metrics.AUROCOODMetric
+
+auprs:
+  _target_: ap_ood_experiments.ood.metrics.AUPRSOODMetric
+
+fpr95:
+  _target_: ap_ood_experiments.ood.metrics.FPR95OODMetric

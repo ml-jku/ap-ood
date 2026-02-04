@@ -1,0 +1,31 @@
+datasets:
+  - dir_name: abisee_cnn_dailymail
+    name: CNN/DM
+  - dir_name: EdinburgNLP_xsum
+    name: XSUM
+  - dir_name: lil-lab_newsroom
+    name: Newsroom
+  - dir_name: Samsung_samsum
+    name: Samsum
+  - dir_name: allenai_c4
+    name: C4
+  - dir_name: ctr4si_reddit_tifu
+    name: Reddit
+  - dir_name: wmt_wmt15
+    name: WMT15
+  - dir_name: wmt_wmt15-newstest14
+    name: nt2014
+  - dir_name: wmt_wmt15-newsdiscussdev15
+    name: ndd2015
+  - dir_name: wmt_wmt15-newsdiscusstest15
+    name: ndt2015
+  - dir_name: opus_IT
+    name: IT
+  - dir_name: opus_Koran
+    name: Koran
+  - dir_name: opus_law
+    name: Law
+  - dir_name: opus_medical
+    name: Medical
+  - dir_name: opus_subtitles
+    name: Subtitles

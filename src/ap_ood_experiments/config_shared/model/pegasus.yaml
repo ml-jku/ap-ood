@@ -1,0 +1,12 @@
+model: 
+  _target_: transformers.PegasusForConditionalGeneration.from_pretrained
+  pretrained_model_name_or_path: ${model.model_name}
+
+tokenizer:
+  _target_: transformers.PegasusTokenizer.from_pretrained
+  pretrained_model_name_or_path: ${model.model_name}
+
+
+model_name: google/pegasus-xsum
+input_ctx_len: 512
+output_ctx_len: 512

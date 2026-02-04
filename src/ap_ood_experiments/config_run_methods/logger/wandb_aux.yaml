@@ -1,0 +1,2 @@
+_target_: ap_ood_experiments.logger.WandbLogger
+prefix: ood_aux

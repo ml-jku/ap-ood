@@ -1,0 +1,13 @@
+methods:
+- target: ap_ood_experiments.method.perplexity.PerplexityMethod
+  name: Perplexity
+- target: ap_ood_experiments.method.entropy.EntropyMethod
+  name: Entropy
+- target: ap_ood_experiments.method.mahalanobis.MahalanobisMethod
+  name: Mahalanobis
+- target: ap_ood_experiments.method.relative_mahalanobis.RelativeMahalanobisMethod
+  name: Relative Mahalanobis
+- target: ap_ood_experiments.method.ap_ood.ap_oodMethod
+  name: \ourmethod (Ours)
+- target: ap_ood_experiments.method.ap_ood_oe.ap_oodOEMethod
+  name: \ourmethod (Ours)

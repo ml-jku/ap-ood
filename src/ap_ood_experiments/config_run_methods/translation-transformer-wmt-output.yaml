@@ -1,0 +1,16 @@
+defaults:
+  - default
+  - data: wmt15
+  - model: wmt15-transformer
+  - task: translation
+  - experiment: translation-${method}-output
+  - _self_
+
+d_embedding: 512
+
+embedding_type: OUTPUT
+benchmark_name: translation-transformer-wmt-output
+
+hydra:
+  searchpath:
+    - pkg://ap_ood_experiments.config_shared

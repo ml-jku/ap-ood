@@ -1,0 +1,5 @@
+_target_: ap_ood_experiments.method.entropy.EntropyMethod
+n_generations: 10
+n_batch_generations: 10
+task: ${task}
+device: ${device}

@@ -1,0 +1,8 @@
+_target_: ap_ood_experiments.task.translation.TranslationEmbeddingCreator
+model: ${model.model}
+tokenizer: ${model.tokenizer}
+input_ctx_len: ${model.input_ctx_len}
+output_ctx_len: ${model.output_ctx_len}
+src_lang: en
+trg_lang: fr
+checkpoint_path: ${oc.env:WMT_MODEL_CHECKPOINT}

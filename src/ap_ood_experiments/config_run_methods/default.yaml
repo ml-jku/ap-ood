@@ -1,0 +1,42 @@
+defaults:
+  - method: ap-ood
+  - metrics: default
+  - logger@train_logger: wandb_train
+  - logger@test_logger: default
+  - logger@aux_logger: wandb_aux
+  - logger@aux_val_logger: wandb_aux_val
+  - _self_
+
+data: ???
+model: ???
+task: ???
+group: default
+
+hydra:
+  job:
+    chdir: true
+  run:
+    dir: ./outputs/${benchmark_name}/${now:%Y-%m-%d}/${now:%H-%M-%S}/${method._target_}
+  sweep:
+    dir: ./multirun/${benchmark_name}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${method._target_}/seed=${seed}/addtl_seed=${addtl_seed}/${hydra.job.num}
+
+embedding_type: ???
+benchmark_name: ???
+n_aux_data: 10000
+num_max_eval_samples: 10000  # max samples per dataset to evaluate
+
+eval_train: true
+eval_aux: true
+eval_aux_val: true
+eval_test: true
+
+device: cuda
+seed: 0
+addtl_seed: 0  # for seeding without changing the seed of the embeddings
+eval_batch_size: 256
+
+embedding_loader:
+  mode: disk  # disk | hybrid | model
+  input_batch_size: 512
+  output_batch_size: 16

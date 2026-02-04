@@ -1,0 +1,6 @@
+# @package _global_
+
+method:
+  beta: 2
+  n_queries: 16
+  lamb: 10

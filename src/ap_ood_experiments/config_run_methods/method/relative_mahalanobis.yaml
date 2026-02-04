@@ -1,0 +1,2 @@
+_target_: ap_ood_experiments.method.relative_mahalanobis.RelativeMahalanobisMethod
+device: ${device}

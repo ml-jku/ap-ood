@@ -1,0 +1,27 @@
+name: ap-ood
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - --extra-index-url https://download.pytorch.org/whl/cu126
+    - wandb
+    - hydra-core
+    - scipy
+    - seaborn
+    - matplotlib
+    - numpy
+    - scikit-learn
+    - tqdm
+    - python-dotenv
+    - transformers
+    - torch
+    - torchvision
+    - bitarray
+    - sacremoses
+    - subword_nmt
+    - datasets<4.0.0
+    - huggingface_hub<0.26
+    - accelerate
+    - beautifulsoup4
+    - sentencepiece
+    - lxml

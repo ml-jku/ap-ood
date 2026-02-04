@@ -1,0 +1,5 @@
+_target_: ap_ood_experiments.task.summarization.SummarizationEmbeddingCreator
+model: ${model.model}
+tokenizer: ${model.tokenizer}
+input_ctx_len: ${model.input_ctx_len}
+output_ctx_len: ${model.output_ctx_len}

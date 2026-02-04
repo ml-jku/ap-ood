@@ -1,0 +1,16 @@
+defaults:
+  - default
+  - data: xsum
+  - model: pegasus
+  - task: summarization
+  - experiment: summarization-${method}-output
+  - _self_
+
+d_embedding: 1024
+
+embedding_type: OUTPUT
+benchmark_name: summarization-pegasus-xsum-output
+
+hydra:
+  searchpath:
+    - pkg://ap_ood_experiments.config_shared

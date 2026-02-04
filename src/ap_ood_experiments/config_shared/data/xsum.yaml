@@ -1,0 +1,91 @@
+id:
+  train:
+    storage: EdinburghNLP_xsum/train
+    split: train
+    runtime:
+      _target_: datasets.load_dataset
+      path: EdinburghNLP/xsum
+      split: train
+  val:
+    storage: EdinburghNLP_xsum/validation
+    split: validation
+    runtime:
+      _target_: datasets.load_dataset
+      path: EdinburghNLP/xsum
+      split: validation
+  test:
+    storage: EdinburghNLP_xsum/test
+    split: test
+    runtime:
+      _target_: datasets.load_dataset
+      path: EdinburghNLP/xsum
+      split: test
+
+aux:
+  train:
+    storage: allenai_c4/train
+    runtime:
+      _target_: ap_ood_experiments.utils.dataset_util.load_dataset_preprocess
+      path: allenai/c4
+      split: train
+      name: en
+      cache_dir: ${oc.env:COMMON_CRAWL_ROOT}
+      rename:
+        - original_column_name: text
+          new_column_name: document
+  val:
+    storage: allenai_c4/validation
+    runtime:
+      _target_: ap_ood_experiments.utils.dataset_util.load_dataset_preprocess
+      path: allenai/c4
+      split: validation
+      name: en
+      cache_dir: ${oc.env:COMMON_CRAWL_ROOT}
+      rename:
+        - original_column_name: text
+          new_column_name: document
+
+ood:
+  - name: cnn_dailymail
+    storage: abisee_cnn_dailymail/test
+    split: test
+    runtime:
+      _target_: ap_ood_experiments.utils.dataset_util.load_dataset_preprocess
+      path: abisee/cnn_dailymail
+      name: "1.0.0"
+      split: test
+      rename:
+        - original_column_name: article
+          new_column_name: document
+  - name: newsroom
+    storage: lil-lab_newsroom/test
+    split: test
+    runtime:
+      _target_: ap_ood_experiments.utils.dataset_util.load_dataset_preprocess
+      path: lil-lab/newsroom
+      data_dir: ${oc.env:NEWSROOM_ROOT}
+      split: test
+      rename:
+        - original_column_name: text
+          new_column_name: document
+  - name: reddit_tifu
+    storage: ctr4si_reddit_tifu/train
+    split: train
+    runtime:
+      _target_: ap_ood_experiments.utils.dataset_util.load_dataset_preprocess
+      path: ctr4si/reddit_tifu
+      name: long
+      split: train
+      rename:
+        - original_column_name: documents
+          new_column_name: document
+  - name: samsum
+    storage: Samsung_samsum/train
+    split: train
+    runtime:
+      _target_: ap_ood_experiments.utils.dataset_util.load_dataset_preprocess
+      path: knkarthick/samsum
+      split: train
+      rename:
+        - original_column_name: dialogue
+          new_column_name: document

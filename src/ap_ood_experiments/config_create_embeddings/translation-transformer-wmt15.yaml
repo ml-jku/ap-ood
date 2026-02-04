@@ -1,0 +1,23 @@
+defaults:
+  - task: translation
+  - model: wmt15-transformer
+  - data: wmt15
+  - _self_
+
+hydra:
+  searchpath:
+    - pkg://ap_ood_experiments.config_shared
+
+input_batch_size: 256
+output_batch_size: 16
+device: cuda
+seed: 0
+embedding_type: INPUT
+
+n_embeddings_id: 100_000
+n_embeddings_aux: 10_000
+n_embeddings_ood: 10_000
+
+run_id: true
+run_aux: true
+run_ood: true

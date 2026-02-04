@@ -1,0 +1,27 @@
+defaults:
+  - optimizer: adamw
+  - detector: ap-ood
+  - _self_
+
+_target_: ap_ood_experiments.method.ap_ood.APOODMethod
+device: ${device}
+batch_size: 512
+n_steps: 1000
+n_queries: 1
+n_heads:
+  _target_: operator.floordiv
+  _args_: 
+    - ${d_embedding}
+    - ${method.n_queries}
+n_features: ${d_embedding}
+beta: 1.
+similarity: dot
+use_scheduler: true
+normalization: true
+standardize_inputs: false
+init_std: 1
+num_workers: 0
+max_mean_batches: null
+
+optimizer:
+  lr: 0.01

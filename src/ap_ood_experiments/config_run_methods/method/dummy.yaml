@@ -1,0 +1,3 @@
+_target_: ap_ood_experiments.method.DummyMethod
+verbose: true
+requires_aux: false

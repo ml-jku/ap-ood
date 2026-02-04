@@ -1,0 +1,5 @@
+# @package _global_
+
+method:
+  n_queries: 4
+  beta: 2.
