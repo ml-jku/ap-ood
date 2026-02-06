@@ -8,12 +8,12 @@ _Daniel Klotz<sup>3</sup>, Sepp Hochreiter<sup>1</sup>, Werner Zellinger<sup>4</
 <sup>3</sup> Interdisciplinary Transformation University Austria, Linz, Austria\
 <sup>4</sup> ELLIS Unit, LIT AI Lab, Institute for Machine Learning, JKU Linz, Austria
 
-[![arXiv](https://img.shields.io/badge/arXiv-2405.08766-b31b1b.svg)](TODO)
+[![arXiv](https://img.shields.io/badge/arXiv-2602.06031-b31b1b.svg)](https://arxiv.org/abs/2602.06031)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
-This repository contains a generic implementation of our paper "AP-OOD: Attention Pooling for Out-of-Distribution Detection" accepted at **ICLR 2026**. The paper is available [here](TODO). **Instructions to reproduce the experiments can be found in the [Experiments](#Experiments) section.**
+This repository contains a generic implementation of our paper "AP-OOD: Attention Pooling for Out-of-Distribution Detection" accepted at **ICLR 2026**. The paper is available [here](https://arxiv.org/abs/2602.06031). **Instructions to reproduce the experiments can be found in the [Experiments](#Experiments) section.**
 
 ## Abstract
 
@@ -265,3 +265,17 @@ The OOD test data for the translation task consists of the following data sets. 
    python -m ap_ood_experiments.run_methods -cn translation-transformer-wmt-output method=ap-ood-oe
    ```
 
+# 📚 Citation
+
+If you found this repository helpful, consider giving it a ⭐ and cite our paper:
+
+```
+@inproceedings{
+hofmann2026apood,
+title={{AP}-{OOD}: Attention Pooling for Out-of-Distribution Detection},
+author={Claus Hofmann and Christian Huber and Bernhard Lehner and Daniel Klotz and Sepp Hochreiter and Werner Zellinger},
+booktitle={The Fourteenth International Conference on Learning Representations},
+year={2026},
+url={https://openreview.net/forum?id=fEYonozhKk}
+}
+```
